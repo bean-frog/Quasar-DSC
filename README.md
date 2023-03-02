@@ -24,7 +24,7 @@ Credits: Iniquity#2313 | Owner of [Arbiter Design](https://www.arbiterdesign.net
 * **jcjms:** Lead Developer
 * **Classy08/Captain Cool:** Assistant Developer
 * **Armaccord#9846:** Official Quasar skins
-* **bean_frog#6968:** cool guy who fixed some stuff
+* **bean_frog#6968:** cool guy who fixed some stuff 
 
 #
 
