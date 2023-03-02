@@ -129,20 +129,31 @@ ipcRenderer.on('SendUserData', (event, message) => {
 
     console.log(keyContentMap);
 
-    document.addEventListener('keydown', function(event) {
-        const chatInput = document.querySelector('input[placeholder="[Enter] to use chat"]');
-        const event222 = new KeyboardEvent('keydown', {
-          keyCode: 13,
-          bubbles: true,
-          cancelable: true
-        });
+    let shortcutsEnabled= true;
 
-        if (event.key in keyContentMap) {
-            chatInput.value = keyContentMap[event.key];
-            chatInput.dispatchEvent(event222);
-            chatInput.dispatchEvent(event222);
-        }
-    });
+document.addEventListener('keydown', function(event) {
+  const chatInput = document.querySelector('input[placeholder="[Enter] to use chat"]');
+  const event222 = new KeyboardEvent('keydown', {
+    keyCode: 13,
+    bubbles: true,
+    cancelable: true
+  });
+  if (event.key === 'Enter') {
+    shortcutsEnabled = !shortcutsEnabled; 
+
+    if (shortcutsEnabled) {
+      console.log('Shortcuts ON');
+    } else {
+      console.log('Shortcuts OFF');
+    }
+    return;
+  }
+  if (shortcutsEnabled && event.key in keyContentMap) {
+    chatInput.value = keyContentMap[event.key];
+    chatInput.dispatchEvent(event222);
+    chatInput.dispatchEvent(event222);
+  }
+});
 
     // shortcutdisplay
 
